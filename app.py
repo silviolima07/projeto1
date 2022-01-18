@@ -1,5 +1,5 @@
 import streamlit as st
-import StringIO
+from StringIO import StringIO
 import pandas as pd
 
 uploaded_file = st.file_uploader("Choose a file")
