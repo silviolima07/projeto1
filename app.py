@@ -4,7 +4,7 @@ import pandas as pd
 
 
 
-st.title("Teste de um modelo")
+st.title("Dataset csv")
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      # To read file as bytes:
