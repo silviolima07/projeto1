@@ -1,46 +1,12 @@
 import streamlit as st
 import pandas as pd
-from PIL import Image 
-from PyPDF2 import PdfFileReader
-import pdfplumber
-
-
-def read_pdf(file):
-	pdfReader = PdfFileReader(file)
-	count = pdfReader.numPages
-	all_page_text = ""
-	for i in range(count):
-		page = pdfReader.getPage(i)
-		all_page_text += page.extractText()
-
-	return all_page_text
-
-def read_pdf_with_pdfplumber(file):
-	with pdfplumber.open(file) as pdf:
-	    page = pdf.pages[0]
-	    return page.extract_text()
-
-# import fitz  # this is pymupdf
-
-# def read_pdf_with_fitz(file):
-# 	with fitz.open(file) as doc:
-# 		text = ""
-# 		for page in doc:
-# 			text += page.getText()
-# 		return text 
-
-# Fxn
-@st.cache
-def load_image(image_file):
-	img = Image.open(image_file)
-	return img 
 
 
 
 def main():
 	st.title("File Upload Tutorial")
 
-	menu = ["Home","Dataset","About"]
+	menu = ["Dataset","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Home":
